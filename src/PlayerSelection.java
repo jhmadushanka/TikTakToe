@@ -36,6 +36,7 @@ public class PlayerSelection extends javax.swing.JFrame {
         btn1 = new javax.swing.JRadioButton();
         btn2 = new javax.swing.JRadioButton();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -68,9 +69,9 @@ public class PlayerSelection extends javax.swing.JFrame {
         getContentPane().add(btn2);
         btn2.setBounds(20, 150, 280, 80);
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 0));
+        jButton1.setBackground(new java.awt.Color(51, 0, 0));
         jButton1.setFont(new java.awt.Font("Press Start 2P", 1, 24)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(102, 0, 0));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("GO");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,7 +79,19 @@ public class PlayerSelection extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(140, 260, 160, 50);
+        jButton1.setBounds(200, 270, 130, 50);
+
+        jButton2.setBackground(new java.awt.Color(51, 0, 0));
+        jButton2.setFont(new java.awt.Font("Press Start 2P", 1, 18)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("Exit");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(20, 270, 110, 50);
 
         jLabel1.setFont(new java.awt.Font("Press Start 2P", 0, 11)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/p2.jpg"))); // NOI18N
@@ -109,6 +122,10 @@ public class PlayerSelection extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btn1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -127,6 +144,7 @@ public class PlayerSelection extends javax.swing.JFrame {
     private javax.swing.JRadioButton btn2;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
     boolean ComMode;
