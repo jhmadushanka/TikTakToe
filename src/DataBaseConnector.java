@@ -14,6 +14,7 @@ public class DataBaseConnector {
     PreparedStatement ps;
     String sql;
     int n=0;
+    String winner;
     void connect()
     {
         try{
