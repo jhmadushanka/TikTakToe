@@ -12,7 +12,7 @@ public class DataBaseConnector {
     ResultSet rs;
     String driver="com.mysql.jdbc.Driver";
     PreparedStatement ps;
-    String sql,sqlCmd;
+    String sql;
     int n=0;
     String winner;
     void connect()
@@ -24,7 +24,7 @@ public class DataBaseConnector {
         }
         catch(Exception e)
         {
-           out.printf("Error in connecting the atabase");
+           out.printf("Error in connecting the database");
         }
     }
     void update(String Name, int Score)
