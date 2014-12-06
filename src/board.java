@@ -11,10 +11,14 @@ import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import sun.applet.Main;
 
 
 
@@ -214,6 +218,23 @@ class board extends javax.swing.JFrame {
        checker.launch(ComMode,this);
         if(ComMode==Boolean.TRUE)
         checker.mark(6,btn20,Boolean.FALSE);
+        
+  new Thread(new Runnable() {
+  // The wrapper thread is unnecessary, unless it blocks on the
+  // Clip finishing; see comments.
+    public void run() {
+      try {
+        Clip clip = AudioSystem.getClip();
+        AudioInputStream inputStream = AudioSystem.getAudioInputStream(
+          Main.class.getResourceAsStream("C:\\Users\\Ishadi\\Desktop\\bb"));
+        clip.open(inputStream);
+        clip.start(); 
+      } catch (Exception e) {
+        System.err.println(e.getMessage());
+      }
+    }
+  }).start();
+
         
     }
 

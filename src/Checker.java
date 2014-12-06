@@ -83,7 +83,7 @@ void check(int box,int p)  //p is always 0 or 1
                       JOptionPane.showMessageDialog(b,player1+"  won!!!!", "Sorry,but next time hopefully :)", JOptionPane.INFORMATION_MESSAGE);   
                      if(!comMode)
                      {
-                            if(!db.search(player1))
+                        if(!db.search(player1))
                                 db.update(player1, 10);
 
                         else
@@ -92,7 +92,10 @@ void check(int box,int p)  //p is always 0 or 1
                             db.update(player1, score+10);
                         }
                      }
-                      System.exit(0);
+                      b.setVisible(false);
+       PlayerSelection p2=new PlayerSelection();
+       p2.setVisible(true);
+       p2.setLocationRelativeTo(null);
 
                   }   
                   i++;
@@ -122,7 +125,10 @@ void check(int box,int p)  //p is always 0 or 1
                             db.update(player2, score+10);
                         }
                   
-                 System.exit(0);
+                b.setVisible(false);
+       PlayerSelection p2=new PlayerSelection();
+       p2.setVisible(true);
+       p2.setLocationRelativeTo(null);
                   
               }   
               i++;
@@ -133,7 +139,10 @@ void check(int box,int p)  //p is always 0 or 1
  if(value==8)
     {
         JOptionPane.showMessageDialog(null," The game tied.", "", JOptionPane.INFORMATION_MESSAGE);
-         System.exit(0);
+         b.setVisible(false);
+       PlayerSelection p2=new PlayerSelection();
+       p2.setVisible(true);
+       p2.setLocationRelativeTo(null);
     } 
   
 }
@@ -165,9 +174,9 @@ void check(int box,int p)  //p is always 0 or 1
                 int j;
                 i=0;
                 
-                for(int k=0;k<8;k++)
+                for(int k=0;k<8;k++)        //instances
                 {
-                    if(p0[k]==2)
+                    if(p0[k]==2)            //winning chance
                     {
                        
                         for(i=0;i<3;i++)
@@ -184,7 +193,7 @@ void check(int box,int p)  //p is always 0 or 1
                     }
                 }
                  
-                for(i=0;i<4;i++)
+                for(i=0;i<4 && !state;i++)        //there are atmost 4 instances associated with any box
                     {                                   //to block
                         t=row.get(box).rr(i);
                         if(t!=-1 && p1[t]==2)
