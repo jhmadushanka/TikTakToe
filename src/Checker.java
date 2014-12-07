@@ -92,19 +92,26 @@ void check(int box,int p)  //p is always 0 or 1
                             db.update(player1, score+10);
                         }
                      }
-                      b.setVisible(false);
+       b.dispose();
        PlayerSelection p2=new PlayerSelection();
        p2.setVisible(true);
        p2.setLocationRelativeTo(null);
+       
 
-                  }   
+                  } 
+                 else
+                 {
                   i++;
                    a=row.get(box).rr(i);
+                   continue;
+                 }
+                 break;
               }
 
        }
    else if(p==1)
    {
+       
        i=0;
         a=row.get(box).rr(i);
       while(a!=-1)
@@ -130,9 +137,14 @@ void check(int box,int p)  //p is always 0 or 1
        p2.setVisible(true);
        p2.setLocationRelativeTo(null);
                   
-              }   
-              i++;
-               a=row.get(box).rr(i);
+              }  
+               else
+                 {
+                  i++;
+                   a=row.get(box).rr(i);
+                   continue;
+                 }
+                 break;
           }
        
    }
@@ -219,6 +231,14 @@ void check(int box,int p)  //p is always 0 or 1
                       state=Boolean.TRUE;
                      }
                 }
+                 
+                 if(!state)
+                 {
+                      if(status[7]==Boolean.TRUE&& status[5]==Boolean.TRUE&& status[4]==Boolean.FALSE)
+                     {b.mark(4);
+                      state=Boolean.TRUE;
+                     }                          
+                 }
                   if(!state)
                  {
                      if(status[2]==Boolean.FALSE)
