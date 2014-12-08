@@ -13,7 +13,7 @@ public class Checker {
     int value=0;
     boolean[] status=new boolean[9];
    
-    String player1,player2;
+    String player1,player2,pp;
    
     URL[] image={getClass().getResource("images/f2.png"),getClass().getResource("images/f1.png")};
     
